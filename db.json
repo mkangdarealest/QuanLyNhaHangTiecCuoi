@@ -1,0 +1,359 @@
+{
+  "loai": [
+    {
+      "MaLoai": "L01",
+      "TenLoai": "Món khai vị",
+      "MoTa": "Các món nhẹ bắt đầu bữa tiệc như súp, gỏi, salad."
+    },
+    {
+      "MaLoai": "L02",
+      "TenLoai": "Món chính",
+      "MoTa": "Các món ăn chính thịnh soạn như gà quay, lẩu, hải sản, cơm, xôi."
+    },
+    {
+      "MaLoai": "L03",
+      "TenLoai": "Món tráng miệng",
+      "MoTa": "Trái cây, chè, bánh ngọt kết thúc bữa tiệc."
+    },
+    {
+      "MaLoai": "L04",
+      "TenLoai": "Đồ uống",
+      "MoTa": "Bia, nước ngọt, rượu vang, nước suối."
+    },
+    {
+      "MaLoai": "L05",
+      "TenLoai": "Dịch vụ tiệc",
+      "MoTa": "Âm thanh, ánh sáng, MC dẫn chương trình, trang trí sân khấu, ban nhạc."
+    }
+  ],
+  "menu_dichvu": [
+    {
+      "MaMenu_DV": "DV001",
+      "TenMenu_DV": "Súp Cua Bể Măng Tây",
+      "MoTa": "Súp cua bể nóng hổi kèm măng tây tươi ngon, béo ngậy.",
+      "HinhAnh": "images/sup_cua.svg",
+      "DonGia": 450000,
+      "GiamGia": 5,
+      "Loai": "L01"
+    },
+    {
+      "MaMenu_DV": "DV002",
+      "TenMenu_DV": "Gỏi Tiến Vua Tai Heo",
+      "MoTa": "Rau tiến vua giòn ngọt trộn tai heo chua ngọt, đậm đà.",
+      "HinhAnh": "images/goi_tien_vua.svg",
+      "DonGia": 380000,
+      "GiamGia": 0,
+      "Loai": "L01"
+    },
+    {
+      "MaMenu_DV": "DV003",
+      "TenMenu_DV": "Gà Đông Tảo Hấp Lá Chanh",
+      "MoTa": "Thịt gà Đông Tảo dai ngọt, thơm mùi lá chanh tự nhiên.",
+      "HinhAnh": "images/ga_dong_tao.svg",
+      "DonGia": 1200000,
+      "GiamGia": 10,
+      "Loai": "L02"
+    },
+    {
+      "MaMenu_DV": "DV004",
+      "TenMenu_DV": "Tôm Hùm Đút Lò Phô Mai",
+      "MoTa": "Tôm hùm tươi sống nướng sốt phô mai đút lò thơm ngậy.",
+      "HinhAnh": "images/tom_hum.svg",
+      "DonGia": 2500000,
+      "GiamGia": 5,
+      "Loai": "L02"
+    },
+    {
+      "MaMenu_DV": "DV005",
+      "TenMenu_DV": "Lẩu Hải Sản Sâm Đất",
+      "MoTa": "Nước lẩu ngọt thanh từ sâm đất kèm tôm, mực, cá tươi ngon.",
+      "HinhAnh": "images/lau_hai_san.svg",
+      "DonGia": 1800000,
+      "GiamGia": 0,
+      "Loai": "L02"
+    },
+    {
+      "MaMenu_DV": "DV006",
+      "TenMenu_DV": "Chè Tổ Yến Hạt Sen",
+      "MoTa": "Chè tổ yến ngọt thanh thanh, hạt sen bùi béo bổ dưỡng.",
+      "HinhAnh": "images/che_to_yen.svg",
+      "DonGia": 600000,
+      "GiamGia": 0,
+      "Loai": "L03"
+    },
+    {
+      "MaMenu_DV": "DV007",
+      "TenMenu_DV": "Rượu Vang Đỏ Cabernet",
+      "MoTa": "Chai rượu vang đỏ nhập khẩu cao cấp từ Pháp.",
+      "HinhAnh": "images/ruou_vang.svg",
+      "DonGia": 850000,
+      "GiamGia": 5,
+      "Loai": "L04"
+    },
+    {
+      "MaMenu_DV": "DV008",
+      "TenMenu_DV": "Gói Âm Thanh Ánh Sáng Diamond",
+      "MoTa": "Hệ thống loa Line Array chuyên nghiệp, đèn LED sân khấu hoành tráng.",
+      "HinhAnh": "images/am_thanh.svg",
+      "DonGia": 15000000,
+      "GiamGia": 10,
+      "Loai": "L05"
+    },
+    {
+      "MaMenu_DV": "DV009",
+      "TenMenu_DV": "MC & Ban Nhạc Acoustic",
+      "MoTa": "MC chuyên nghiệp dẫn chương trình cùng ban nhạc acoustic chơi suốt tiệc.",
+      "HinhAnh": "images/mc_band.svg",
+      "DonGia": 8000000,
+      "GiamGia": 0,
+      "Loai": "L05"
+    },
+    {
+      "MaMenu_DV": "DV010",
+      "TenMenu_DV": "Trang Trí Sân Khấu Hoa Tươi Premium",
+      "MoTa": "Thiết kế backdrop hoa tươi cao cấp theo tông màu cô dâu chú rể chọn.",
+      "HinhAnh": "images/trang_tri.svg",
+      "DonGia": 25000000,
+      "GiamGia": 5,
+      "Loai": "L05"
+    }
+  ],
+  "dattiec": [
+    {
+      "IdDatTiec": "DT001",
+      "NgayDat": "2026-07-01",
+      "NgayThucHien": "2026-07-20",
+      "TenNhanVien": "Nguyễn Văn Hoàng",
+      "TenKhach": "Nguyễn Minh Đức & Lê Thu Thủy",
+      "SDT": "0987654321",
+      "TongSL": 73,
+      "TongTien": 113400000,
+      "DatCoc": 30000000,
+      "ConLai": 0,
+      "GhiChu": "Trang trí tiệc cưới tông màu Pastel hồng trắng. Cần kiểm tra âm thanh kỹ trước 15h.",
+      "TrangThai": "Đã thanh toán"
+    },
+    {
+      "IdDatTiec": "DT002",
+      "NgayDat": "2026-07-05",
+      "NgayThucHien": "2026-07-15",
+      "TenNhanVien": "Trần Thị Lan",
+      "TenKhach": "Phạm Hoàng Nam & Vũ Khánh Linh",
+      "SDT": "0912345678",
+      "TongSL": 302,
+      "TongTien": 235000000,
+      "DatCoc": 50000000,
+      "ConLai": 0,
+      "GhiChu": "Tiệc chay 2 bàn cho khách mời đặc biệt.",
+      "TrangThai": "Đã thanh toán"
+    }
+  ],
+  "chitietdattiec": [
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV001",
+      "SoLuong": 30,
+      "DonGia": 450000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV003",
+      "SoLuong": 30,
+      "DonGia": 1200000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV005",
+      "SoLuong": 30,
+      "DonGia": 1800000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV007",
+      "SoLuong": 90,
+      "DonGia": 850000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT001",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV002",
+      "SoLuong": 50,
+      "DonGia": 380000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV004",
+      "SoLuong": 50,
+      "DonGia": 2500000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV006",
+      "SoLuong": 50,
+      "DonGia": 600000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV009",
+      "SoLuong": 1,
+      "DonGia": 8000000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    }
+  ],
+  "thanhtoan": [
+    {
+      "IdThanhtoan": "TT001",
+      "Ngaytt": "2026-07-15",
+      "IdDatTiec": "DT002",
+      "Ngaythuchien": "2026-07-15",
+      "TenNhanVien": "Trần Thị Lan",
+      "TenKhach": "Phạm Hoàng Nam & Vũ Khánh Linh",
+      "SD": "0912345678",
+      "TongSL": 302,
+      "TongTien": 235000000,
+      "DaDatCoc": 50000000,
+      "ConLai": 185000000,
+      "TienPhaiNopThem": 5000000,
+      "TienGiamGia": 10000000,
+      "TongTienKhachTra": 180000000,
+      "GhiChu": "Thanh toán đợt cuối thành công. Khách hài lòng về dịch vụ hoa tươi."
+    },
+    {
+      "IdThanhtoan": "TT002",
+      "Ngaytt": "2026-07-13",
+      "IdDatTiec": "DT001",
+      "Ngaythuchien": "2026-07-20",
+      "TenNhanVien": "Nguyễn Văn Hoàng",
+      "TenKhach": "Nguyễn Minh Đức & Lê Thu Thủy",
+      "SD": "0987654321",
+      "TongSL": 73,
+      "TongTien": 113400000,
+      "DaDatCoc": 30000000,
+      "ConLai": 0,
+      "GhiChu": "Trang trí tiệc cưới tông màu Pastel hồng trắng. Cần kiểm tra âm thanh kỹ trước 15h.",
+      "TienPhaiNopThem": 0,
+      "TienGiamGia": 0,
+      "TongTienKhachTra": 83400000
+    }
+  ],
+  "chitietthanhtoan": [
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV002",
+      "SoLuong": 50,
+      "DonGia": 380000,
+      "GiamGia": 0
+    },
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV004",
+      "SoLuong": 50,
+      "DonGia": 2500000,
+      "GiamGia": 5
+    },
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV006",
+      "SoLuong": 50,
+      "DonGia": 600000,
+      "GiamGia": 0
+    },
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV009",
+      "SoLuong": 1,
+      "DonGia": 8000000,
+      "GiamGia": 0
+    },
+    {
+      "IdThanhToan": "TT001",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV001",
+      "SoLuong": 30,
+      "DonGia": 450000,
+      "GiamGia": 5
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV003",
+      "SoLuong": 30,
+      "DonGia": 1200000,
+      "GiamGia": 10
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV005",
+      "SoLuong": 30,
+      "DonGia": 1800000,
+      "GiamGia": 0
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV007",
+      "SoLuong": 90,
+      "DonGia": 850000,
+      "GiamGia": 5
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdThanhToan": "TT002",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    }
+  ]
+}

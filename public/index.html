@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Wedding - Hệ Thống Quản Lý Tiệc Cưới</title>
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <!-- Main Shell -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="ri-vip-crown-fill gold-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-title">Royal Wedding</span>
+                    <span class="logo-subtitle">Luxury Management</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active" data-view="dashboard">
+                    <i class="ri-dashboard-line"></i>
+                    <span>Bảng Điều Khiển</span>
+                </a>
+                <a href="#categories" class="nav-link" data-view="categories">
+                    <i class="ri-folder-open-line"></i>
+                    <span>Quản Lý Loại</span>
+                </a>
+                <a href="#menu" class="nav-link" data-view="menu">
+                    <i class="ri-restaurant-2-line"></i>
+                    <span>Thực Đơn & Dịch Vụ</span>
+                </a>
+                <a href="#bookings" class="nav-link" data-view="bookings">
+                    <i class="ri-calendar-todo-line"></i>
+                    <span>Quản Lý Đặt Tiệc</span>
+                </a>
+                <a href="#payments" class="nav-link" data-view="payments">
+                    <i class="ri-hand-coin-line"></i>
+                    <span>Thanh Toán & Hóa Đơn</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-avatar">
+                    <i class="ri-user-star-line"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Quản Trị Viên</span>
+                    <span class="user-role">Trưởng Bộ Phận</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Panel -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1 id="page-title">Bảng Điều Khiển</h1>
+                    <p id="page-subtitle">Chào mừng trở lại! Xem báo cáo hoạt động nhà hàng hôm nay.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="live-date">
+                        <i class="ri-time-line"></i>
+                        <span id="current-time">get current time</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic Views Container -->
+            <div class="view-content">
+                
+                <!-- 1. VIEW: DASHBOARD -->
+                <section id="view-dashboard" class="app-view active">
+                    <!-- Widget Summary Cards -->
+                    <div class="dashboard-widgets">
+                        <div class="widget-card">
+                            <div class="widget-icon rev-bg"><i class="ri-money-dollar-circle-line"></i></div>
+                            <div class="widget-data">
+                                <span class="widget-title">Tổng Doanh Thu</span>
+                                <h3 id="stat-revenue">0 ₫</h3>
+                            </div>
+                        </div>
+                        <div class="widget-card">
+                            <div class="widget-icon bookings-bg"><i class="ri-contacts-book-line"></i></div>
+                            <div class="widget-data">
+                                <span class="widget-title">Tổng Lượt Đặt Tiệc</span>
+                                <h3 id="stat-bookings">0</h3>
+                            </div>
+                        </div>
+                        <div class="widget-card">
+                            <div class="widget-icon pending-bg"><i class="ri-calendar-schedule-line"></i></div>
+                            <div class="widget-data">
+                                <span class="widget-title">Tiệc Đang Chờ (Cọc)</span>
+                                <h3 id="stat-pending">0</h3>
+                            </div>
+                        </div>
+                        <div class="widget-card">
+                            <div class="widget-icon items-bg"><i class="ri-restaurant-line"></i></div>
+                            <div class="widget-data">
+                                <span class="widget-title">Món Ăn & Dịch Vụ</span>
+                                <h3 id="stat-services">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts & Lists -->
+                    <div class="dashboard-grid">
+                        <div class="grid-card chart-container">
+                            <div class="card-header">
+                                <h3>Biểu Đồ Doanh Thu 6 Tháng</h3>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="grid-card list-container">
+                            <div class="card-header">
+                                <h3>Đặt Tiệc Gần Đây</h3>
+                            </div>
+                            <div class="recent-list" id="dashboard-recent-bookings">
+                                <!-- Rendered dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid full-width">
+                        <div class="grid-card">
+                            <div class="card-header">
+                                <h3>Món Ăn & Dịch Vụ Được Đặt Nhiều Nhất</h3>
+                            </div>
+                            <div class="popular-items-grid" id="dashboard-popular-items">
+                                <!-- Rendered dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. VIEW: CATEGORIES -->
+                <section id="view-categories" class="app-view">
+                    <div class="view-actions">
+                        <div class="search-bar">
+                            <i class="ri-search-line"></i>
+                            <input type="text" id="category-search" placeholder="Tìm kiếm loại...">
+                        </div>
+                        <button class="btn btn-primary" onclick="openCategoryModal()">
+                            <i class="ri-add-line"></i> Thêm Loại Mới
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã Loại</th>
+                                    <th>Tên Loại</th>
+                                    <th>Mô Tả</th>
+                                    <th class="actions-col">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="categories-table-body">
+                                <!-- Dynamic -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 3. VIEW: MENU & SERVICES -->
+                <section id="view-menu" class="app-view">
+                    <div class="view-actions">
+                        <div class="search-bar">
+                            <i class="ri-search-line"></i>
+                            <input type="text" id="menu-search" placeholder="Tìm kiếm món ăn, dịch vụ...">
+                        </div>
+                        <div class="filter-actions">
+                            <select id="menu-filter-category" class="form-select">
+                                <option value="">Tất cả phân loại</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="openMenuModal()">
+                                <i class="ri-add-line"></i> Thêm Món / Dịch Vụ
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="menu-items-grid" id="menu-items-grid">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </section>
+
+                <!-- 4. VIEW: BOOKINGS -->
+                <section id="view-bookings" class="app-view">
+                    <div class="view-actions">
+                        <div class="search-bar">
+                            <i class="ri-search-line"></i>
+                            <input type="text" id="booking-search" placeholder="Tìm tên khách hoặc SĐT...">
+                        </div>
+                        <button class="btn btn-primary" onclick="openBookingModal()">
+                            <i class="ri-add-line"></i> Đặt Tiệc Cưới Mới
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã Đơn</th>
+                                    <th>Tên Khách</th>
+                                    <th>Số Điện Thoại</th>
+                                    <th>Ngày Thực Hiện</th>
+                                    <th>Tổng Tiền</th>
+                                    <th>Đặt Cọc</th>
+                                    <th>Còn Lại</th>
+                                    <th>Trạng Thái</th>
+                                    <th class="actions-col">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-table-body">
+                                <!-- Dynamic -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 5. VIEW: PAYMENTS -->
+                <section id="view-payments" class="app-view">
+                    <div class="view-actions">
+                        <div class="search-bar">
+                            <i class="ri-search-line"></i>
+                            <input type="text" id="payment-search" placeholder="Tìm kiếm hóa đơn...">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã HĐ</th>
+                                    <th>Mã Đặt Tiệc</th>
+                                    <th>Khách Hàng</th>
+                                    <th>Ngày Thanh Toán</th>
+                                    <th>Tổng Tiền Tiệc</th>
+                                    <th>Cọc Trừ</th>
+                                    <th>Phụ Thu thêm</th>
+                                    <th>Giảm hóa đơn</th>
+                                    <th>Khách Phải Trả</th>
+                                    <th class="actions-col">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="payments-table-body">
+                                <!-- Dynamic -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ==========================================
+      MODALS CONTAINER
+    ========================================== -->
+
+    <!-- Category Modal -->
+    <div id="modal-category" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="category-modal-title">Thêm Loại Mới</h3>
+                <button class="close-btn" onclick="closeModal('modal-category')"><i class="ri-close-line"></i></button>
+            </div>
+            <form id="form-category" onsubmit="saveCategory(event)">
+                <input type="hidden" id="category-id">
+                <div class="form-group">
+                    <label for="category-name">Tên Loại <span class="required">*</span></label>
+                    <input type="text" id="category-name" class="form-control" placeholder="Ví dụ: Món khai vị" required>
+                </div>
+                <div class="form-group">
+                    <label for="category-desc">Mô Tả</label>
+                    <textarea id="category-desc" class="form-control" rows="3" placeholder="Nhập mô tả về loại này..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-category')">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu Lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Menu Item Modal -->
+    <div id="modal-menu" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="menu-modal-title">Thêm Món Ăn / Dịch Vụ</h3>
+                <button class="close-btn" onclick="closeModal('modal-menu')"><i class="ri-close-line"></i></button>
+            </div>
+            <form id="form-menu" onsubmit="saveMenuItem(event)">
+                <input type="hidden" id="menu-id">
+                <div class="form-group">
+                    <label for="menu-name">Tên Món Ăn / Dịch Vụ <span class="required">*</span></label>
+                    <input type="text" id="menu-name" class="form-control" placeholder="Ví dụ: Gà Quay Lu Xôi Gấc" required>
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="menu-category">Phân Loại <span class="required">*</span></label>
+                        <select id="menu-category" class="form-select" required>
+                            <!-- Dynamic -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="menu-image">Hình Ảnh</label>
+                        <select id="menu-image" class="form-select">
+                            <option value="images/sup_cua.svg">Súp Cua</option>
+                            <option value="images/goi_tien_vua.svg">Gỏi Tiến Vua</option>
+                            <option value="images/ga_dong_tao.svg">Gà Đông Tảo</option>
+                            <option value="images/tom_hum.svg">Tôm Hùm</option>
+                            <option value="images/lau_hai_san.svg">Lẩu Hải Sản</option>
+                            <option value="images/che_to_yen.svg">Chè Tổ Yến</option>
+                            <option value="images/ruou_vang.svg">Rượu Vang</option>
+                            <option value="images/am_thanh.svg">Gói Âm Thanh</option>
+                            <option value="images/mc_band.svg">MC & Ban Nhạc</option>
+                            <option value="images/trang_tri.svg">Trang Trí Hoa Tươi</option>
+                            <option value="images/default.svg" selected>Mặc Định</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="menu-price">Đơn Giá (đ) <span class="required">*</span></label>
+                        <input type="number" id="menu-price" class="form-control" min="0" placeholder="Ví dụ: 1200000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="menu-discount">Giảm Giá (%)</label>
+                        <input type="number" id="menu-discount" class="form-control" min="0" max="100" value="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="menu-desc">Mô Tả</label>
+                    <textarea id="menu-desc" class="form-control" rows="3" placeholder="Mô tả nguyên liệu, gói dịch vụ..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-menu')">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu Lại</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="modal-booking" class="modal modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="booking-modal-title">Đặt Tiệc Cưới Mới</h3>
+                <button class="close-btn" onclick="closeModal('modal-booking')"><i class="ri-close-line"></i></button>
+            </div>
+            <form id="form-booking" onsubmit="saveBooking(event)">
+                <input type="hidden" id="booking-id">
+                
+                <div class="modal-body-split">
+                    <!-- Column 1: Booking Info -->
+                    <div class="info-section">
+                        <h4 class="section-title"><i class="ri-user-heart-line"></i> Thông Tin Khách Hàng & Sự Kiện</h4>
+                        
+                        <div class="form-group">
+                            <label for="booking-cust-name">Tên Khách Hàng (Cô Dâu / Chú Rể) <span class="required">*</span></label>
+                            <input type="text" id="booking-cust-name" class="form-control" placeholder="Ví dụ: Anh Quân & Chị Lan" required>
+                        </div>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="booking-phone">Số Điện Thoại <span class="required">*</span></label>
+                                <input type="tel" id="booking-phone" class="form-control" placeholder="Ví dụ: 0912345678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-staff">Nhân Viên Thực Hiện</label>
+                                <input type="text" id="booking-staff" class="form-control" placeholder="Ví dụ: Nguyễn Văn Hoàng">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="booking-date-execution">Ngày Tổ Chức <span class="required">*</span></label>
+                                <input type="date" id="booking-date-execution" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-deposit">Tiền Đặt Cọc (đ) <span class="required">*</span></label>
+                                <input type="number" id="booking-deposit" class="form-control" min="0" value="0" oninput="calculateBookingTotals()" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-notes">Ghi Chú Đặc Biệt</label>
+                            <textarea id="booking-notes" class="form-control" rows="3" placeholder="Yêu cầu trang trí, chế độ ăn, bàn chay..."></textarea>
+                        </div>
+
+                        <div class="billing-summary">
+                            <h4 class="summary-title"><i class="ri-calculator-line"></i> Tạm Tính Hóa Đơn</h4>
+                            <div class="summary-row">
+                                <span>Tổng số lượng món/DV:</span>
+                                <strong id="billing-qty">0</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tổng chi phí tiệc:</span>
+                                <strong id="billing-subtotal">0 ₫</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tiền đặt cọc:</span>
+                                <strong id="billing-deposit-disp" class="text-danger">0 ₫</strong>
+                            </div>
+                            <hr>
+                            <div class="summary-row total-row">
+                                <span>Còn Lại Cần Trả:</span>
+                                <strong id="billing-final" class="text-success">0 ₫</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Items Selector -->
+                    <div class="items-selector-section">
+                        <h4 class="section-title"><i class="ri-restaurant-fill"></i> Chọn Thực Đơn & Dịch Vụ Cưới</h4>
+                        
+                        <div class="selector-filter">
+                            <select id="booking-item-category-filter" class="form-select" onchange="filterBookingSelectorItems()">
+                                <option value="">Tất cả loại sản phẩm</option>
+                            </select>
+                        </div>
+
+                        <div class="booking-selector-list" id="booking-selector-list">
+                            <!-- Items dynamically loaded with checkmarks and quantity buttons -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-booking')">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu Đơn Đặt</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="modal-payment" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thanh Toán & Hóa Đơn Tiệc Cưới</h3>
+                <button class="close-btn" onclick="closeModal('modal-payment')"><i class="ri-close-line"></i></button>
+            </div>
+            <form id="form-payment" onsubmit="processPayment(event)">
+                <input type="hidden" id="payment-booking-id">
+                
+                <div class="payment-overview">
+                    <div class="pay-row"><span>Khách hàng:</span> <strong id="pay-cust-name">-</strong></div>
+                    <div class="pay-row"><span>Số điện thoại:</span> <strong id="pay-cust-phone">-</strong></div>
+                    <div class="pay-row"><span>Ngày tổ chức:</span> <strong id="pay-date-exec">-</strong></div>
+                    <hr>
+                    <div class="pay-row"><span>Tổng giá trị tiệc cưới:</span> <strong id="pay-total-party">0 ₫</strong></div>
+                    <div class="pay-row"><span>Đã cọc trước:</span> <strong id="pay-total-deposit" class="text-success">0 ₫</strong></div>
+                    <div class="pay-row"><span>Dư nợ còn lại:</span> <strong id="pay-balance" class="text-danger">0 ₫</strong></div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="pay-extra-cost">Phụ Thu Thêm (đ)</label>
+                        <input type="number" id="pay-extra-cost" class="form-control" min="0" value="0" oninput="calculatePaymentFinal()">
+                    </div>
+                    <div class="form-group">
+                        <label for="pay-discount">Chiết Khấu Giảm Giá (đ)</label>
+                        <input type="number" id="pay-discount" class="form-control" min="0" value="0" oninput="calculatePaymentFinal()">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pay-notes">Ghi chú thanh toán</label>
+                    <textarea id="pay-notes" class="form-control" rows="2" placeholder="Ví dụ: Bàn giao tủ hoa tươi, khách thanh toán chuyển khoản toàn bộ..."></textarea>
+                </div>
+
+                <div class="payment-grand-total">
+                    <span>Tổng Tiền Khách Cần Thanh Toán:</span>
+                    <h2 id="pay-final-charge">0 ₫</h2>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-payment')">Hủy</button>
+                    <button type="submit" class="btn btn-success"><i class="ri-money-dollar-circle-line"></i> Xác Nhận Thanh Toán</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Print Invoice Modal -->
+    <div id="modal-invoice-detail" class="modal modal-lg">
+        <div class="modal-content printable-modal">
+            <div class="modal-header no-print">
+                <h3>Xem Hóa Đơn Chi Tiết</h3>
+                <div class="header-buttons">
+                    <button class="btn btn-primary print-btn" onclick="printInvoice()"><i class="ri-printer-line"></i> In Hóa Đơn</button>
+                    <button class="close-btn" onclick="closeModal('modal-invoice-detail')"><i class="ri-close-line"></i></button>
+                </div>
+            </div>
+            
+            <!-- Printable Invoice Content -->
+            <div class="invoice-print-area" id="invoice-print-area">
+                <!-- Loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Thông báo</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

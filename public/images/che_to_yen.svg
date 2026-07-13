@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e293b"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#d4af37"/>
+                    <stop offset="100%" stop-color="#f3e5ab"/>
+                </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)"/>
+            <rect x="10" y="10" width="380" height="230" rx="15" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.3"/>
+            <!-- Dessert Cup Icon -->
+            <path d="M140,100 L260,100 L230,160 L170,160 Z" fill="none" stroke="url(#gold)" stroke-width="3"/>
+            <path d="M170,160 L170,180 L230,180 L230,160" fill="none" stroke="url(#gold)" stroke-width="2"/>
+            <path d="M150,180 L250,180" stroke="url(#gold)" stroke-width="3"/>
+            <text x="200" y="215" fill="url(#gold)" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle" letter-spacing="1">CHÈ TỔ YẾN</text>
+        </svg>

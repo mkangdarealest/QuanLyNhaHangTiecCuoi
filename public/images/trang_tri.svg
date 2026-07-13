@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+            <defs>
+                <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e293b"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                </linearGradient>
+                <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#d4af37"/>
+                    <stop offset="100%" stop-color="#f3e5ab"/>
+                </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)"/>
+            <rect x="10" y="10" width="380" height="230" rx="15" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.3"/>
+            <!-- Wedding Flowers/Stage Icon -->
+            <path d="M130,160 C130,100 270,100 270,160" fill="none" stroke="url(#gold)" stroke-width="3"/>
+            <circle cx="200" cy="100" r="16" fill="none" stroke="url(#gold)" stroke-width="2"/>
+            <path d="M190,100 C170,100 170,70 190,80 C200,60 210,60 210,80 C230,70 230,100 210,100" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+            <text x="200" y="210" fill="url(#gold)" font-family="sans-serif" font-weight="bold" font-size="16" text-anchor="middle" letter-spacing="1">TRANG TRÍ HOA TƯƠI</text>
+        </svg>

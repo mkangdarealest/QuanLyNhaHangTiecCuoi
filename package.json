@@ -1,0 +1,15 @@
+{
+  "name": "quan-ly-nha-hang-tiec-cuoi",
+  "version": "1.0.0",
+  "description": "Hệ thống quản lý đặt tiệc cưới nhà hàng",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "author": "Antigravity",
+  "license": "MIT"
+}
