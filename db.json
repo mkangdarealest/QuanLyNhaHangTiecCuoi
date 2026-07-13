@@ -31,7 +31,7 @@
       "MaMenu_DV": "DV001",
       "TenMenu_DV": "Súp Cua Bể Măng Tây",
       "MoTa": "Súp cua bể nóng hổi kèm măng tây tươi ngon, béo ngậy.",
-      "HinhAnh": "images/sup_cua.svg",
+      "HinhAnh": "images/SupCua.jpg",
       "DonGia": 450000,
       "GiamGia": 5,
       "Loai": "L01"
@@ -40,7 +40,7 @@
       "MaMenu_DV": "DV002",
       "TenMenu_DV": "Gỏi Tiến Vua Tai Heo",
       "MoTa": "Rau tiến vua giòn ngọt trộn tai heo chua ngọt, đậm đà.",
-      "HinhAnh": "images/goi_tien_vua.svg",
+      "HinhAnh": "images/GoiTienVua.jpg",
       "DonGia": 380000,
       "GiamGia": 0,
       "Loai": "L01"
@@ -49,7 +49,7 @@
       "MaMenu_DV": "DV003",
       "TenMenu_DV": "Gà Đông Tảo Hấp Lá Chanh",
       "MoTa": "Thịt gà Đông Tảo dai ngọt, thơm mùi lá chanh tự nhiên.",
-      "HinhAnh": "images/ga_dong_tao.svg",
+      "HinhAnh": "images/Ga.webp",
       "DonGia": 1200000,
       "GiamGia": 10,
       "Loai": "L02"
@@ -58,7 +58,7 @@
       "MaMenu_DV": "DV004",
       "TenMenu_DV": "Tôm Hùm Đút Lò Phô Mai",
       "MoTa": "Tôm hùm tươi sống nướng sốt phô mai đút lò thơm ngậy.",
-      "HinhAnh": "images/tom_hum.svg",
+      "HinhAnh": "images/TomHum.webp",
       "DonGia": 2500000,
       "GiamGia": 5,
       "Loai": "L02"
@@ -67,7 +67,7 @@
       "MaMenu_DV": "DV005",
       "TenMenu_DV": "Lẩu Hải Sản Sâm Đất",
       "MoTa": "Nước lẩu ngọt thanh từ sâm đất kèm tôm, mực, cá tươi ngon.",
-      "HinhAnh": "images/lau_hai_san.svg",
+      "HinhAnh": "images/Lau.jpeg",
       "DonGia": 1800000,
       "GiamGia": 0,
       "Loai": "L02"
@@ -76,7 +76,7 @@
       "MaMenu_DV": "DV006",
       "TenMenu_DV": "Chè Tổ Yến Hạt Sen",
       "MoTa": "Chè tổ yến ngọt thanh thanh, hạt sen bùi béo bổ dưỡng.",
-      "HinhAnh": "images/che_to_yen.svg",
+      "HinhAnh": "images/CheToYen.jpg",
       "DonGia": 600000,
       "GiamGia": 0,
       "Loai": "L03"
@@ -85,7 +85,7 @@
       "MaMenu_DV": "DV007",
       "TenMenu_DV": "Rượu Vang Đỏ Cabernet",
       "MoTa": "Chai rượu vang đỏ nhập khẩu cao cấp từ Pháp.",
-      "HinhAnh": "images/ruou_vang.svg",
+      "HinhAnh": "images/Ruou.jpg",
       "DonGia": 850000,
       "GiamGia": 5,
       "Loai": "L04"
@@ -94,7 +94,7 @@
       "MaMenu_DV": "DV008",
       "TenMenu_DV": "Gói Âm Thanh Ánh Sáng Diamond",
       "MoTa": "Hệ thống loa Line Array chuyên nghiệp, đèn LED sân khấu hoành tráng.",
-      "HinhAnh": "images/am_thanh.svg",
+      "HinhAnh": "images/AmThanh.webp",
       "DonGia": 15000000,
       "GiamGia": 10,
       "Loai": "L05"
@@ -103,7 +103,7 @@
       "MaMenu_DV": "DV009",
       "TenMenu_DV": "MC & Ban Nhạc Acoustic",
       "MoTa": "MC chuyên nghiệp dẫn chương trình cùng ban nhạc acoustic chơi suốt tiệc.",
-      "HinhAnh": "images/mc_band.svg",
+      "HinhAnh": "images/Band.jpeg",
       "DonGia": 8000000,
       "GiamGia": 0,
       "Loai": "L05"
@@ -112,7 +112,7 @@
       "MaMenu_DV": "DV010",
       "TenMenu_DV": "Trang Trí Sân Khấu Hoa Tươi Premium",
       "MoTa": "Thiết kế backdrop hoa tươi cao cấp theo tông màu cô dâu chú rể chọn.",
-      "HinhAnh": "images/trang_tri.svg",
+      "HinhAnh": "images/TrangTri.jpg",
       "DonGia": 25000000,
       "GiamGia": 5,
       "Loai": "L05"
@@ -146,6 +146,34 @@
       "ConLai": 0,
       "GhiChu": "Tiệc chay 2 bàn cho khách mời đặc biệt.",
       "TrangThai": "Đã thanh toán"
+    },
+    {
+      "IdDatTiec": "DT003",
+      "NgayDat": "2026-07-13",
+      "NgayThucHien": "2026-07-20",
+      "TenNhanVien": "Lễ Tân",
+      "TenKhach": "Chị Hân&Anh Tiến",
+      "SDT": "0786913263",
+      "TongSL": 29,
+      "TongTien": 60842500,
+      "DatCoc": 10000000,
+      "ConLai": 50842500,
+      "GhiChu": "",
+      "TrangThai": "Đã cọc"
+    },
+    {
+      "IdDatTiec": "DT004",
+      "NgayDat": "2026-07-13",
+      "NgayThucHien": "2026-07-20",
+      "TenNhanVien": "Lễ Tân",
+      "TenKhach": "Nguyễn Hoàng Thùy Trinh & Nguyễn Hữu Toàn",
+      "SDT": "0786913263",
+      "TongSL": 143,
+      "TongTien": 194650000,
+      "DatCoc": 10000000,
+      "ConLai": 184650000,
+      "GhiChu": "",
+      "TrangThai": "Đã cọc"
     }
   ],
   "chitietdattiec": [
@@ -228,6 +256,146 @@
     },
     {
       "IdDatTiec": "DT002",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV001",
+      "SoLuong": 20,
+      "DonGia": 450000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV002",
+      "SoLuong": 1,
+      "DonGia": 380000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV003",
+      "SoLuong": 1,
+      "DonGia": 1200000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV004",
+      "SoLuong": 1,
+      "DonGia": 2500000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV005",
+      "SoLuong": 1,
+      "DonGia": 1800000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV006",
+      "SoLuong": 1,
+      "DonGia": 600000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV007",
+      "SoLuong": 1,
+      "DonGia": 850000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV009",
+      "SoLuong": 1,
+      "DonGia": 8000000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT003",
+      "MaMenu_DV": "DV010",
+      "SoLuong": 1,
+      "DonGia": 25000000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV001",
+      "SoLuong": 20,
+      "DonGia": 450000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV002",
+      "SoLuong": 20,
+      "DonGia": 380000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV003",
+      "SoLuong": 20,
+      "DonGia": 1200000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV004",
+      "SoLuong": 20,
+      "DonGia": 2500000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV005",
+      "SoLuong": 20,
+      "DonGia": 1800000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV006",
+      "SoLuong": 20,
+      "DonGia": 600000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV008",
+      "SoLuong": 1,
+      "DonGia": 15000000,
+      "GiamGia": 10
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV007",
+      "SoLuong": 20,
+      "DonGia": 850000,
+      "GiamGia": 5
+    },
+    {
+      "IdDatTiec": "DT004",
+      "MaMenu_DV": "DV009",
+      "SoLuong": 1,
+      "DonGia": 8000000,
+      "GiamGia": 0
+    },
+    {
+      "IdDatTiec": "DT004",
       "MaMenu_DV": "DV010",
       "SoLuong": 1,
       "DonGia": 25000000,
