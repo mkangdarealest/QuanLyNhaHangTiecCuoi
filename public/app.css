@@ -1287,36 +1287,92 @@ body {
    PRINT CSS OVERRIDES
    ========================================================================== */
 @media print {
-    body * {
-        visibility: hidden;
+    /* Hide the entire main app layout and other modals to prevent them from taking layout space */
+    .app-container, .modal:not(#modal-invoice-detail) {
+        display: none !important;
     }
-    .invoice-print-area, .invoice-print-area * {
-        visibility: visible;
+    
+    /* Make the invoice detail modal take up the entire viewport */
+    #modal-invoice-detail.modal {
+        display: block !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
     }
-    .invoice-print-area {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        padding: 0;
-        box-shadow: none;
-        background: white;
-        color: black;
-    }
-    .modal, .modal-content, .printable-modal {
+    
+    #modal-invoice-detail .modal-content {
         background: white !important;
         border: none !important;
         box-shadow: none !important;
-        position: static !important;
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
-        max-height: 100% !important;
         padding: 0 !important;
+        margin: 0 !important;
         display: block !important;
         overflow: visible !important;
+        animation: none !important;
     }
-    .no-print {
+    
+    /* Hide modal headers and other non-printable components */
+    .no-print, .modal-header {
         display: none !important;
+    }
+
+    /* Reset invoice print container */
+    .invoice-print-area {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        background: white !important;
+        color: #1e293b !important;
+        font-size: 10pt !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Compress margins to fit exactly 1 page */
+    .invoice-header {
+        margin-bottom: 20px !important;
+        padding-bottom: 12px !important;
+        border-bottom: 2px solid #e2e8f0 !important;
+    }
+    
+    .inv-info-grid {
+        margin-bottom: 20px !important;
+        gap: 15px !important;
+    }
+    
+    .inv-card h4 {
+        border-bottom: 1px solid #cbd5e1 !important;
+        padding-bottom: 4px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .inv-table {
+        margin-bottom: 20px !important;
+    }
+    
+    .inv-table th {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .inv-summary-box {
+        margin-bottom: 25px !important;
+        margin-top: 15px !important;
+    }
+    
+    .inv-signatures {
+        margin-top: 40px !important;
     }
 }
